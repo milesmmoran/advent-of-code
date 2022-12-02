@@ -6,7 +6,8 @@ export const read = (filename: string) => {
     const data = readFileSync(filename).toString("utf-8");
     console.log(data)
     console.log('-'.repeat(BASE_BAR_LENGTH))
-    return data;
+
+    return data.split("\n");
 };
 
 export const displaySolution = (solution: string) => {
