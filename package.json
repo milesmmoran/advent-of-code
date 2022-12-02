@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "source local.sh && ts-node src/test.ts"
+    "1": "ts-node src/puzzles/2022/day-1/solution.ts",
+    "2": "ts-node src/puzzles/2022/day-2/solution.ts"
+
   },
   "author": "Miles Moran",
   "license": "ISC",
