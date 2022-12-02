@@ -1,6 +1,7 @@
 import { prompt } from "enquirer";
 import { displaySolution } from "../shared/utils";
 import { getDays, getParts, getAlgorithms, getAlgorithm, getInput } from "./files";
+import { performance } from "perf_hooks";
 
 const cli = async () => {
   const year = "2022"; // can make dynamic later
@@ -53,9 +54,15 @@ const cli = async () => {
   const algo: Function = (await getAlgorithm(year, day, part, algorithm))["default"];
   const input = getInput(year, day);
 
+  const start = performance.now();
   const result = await algo(input);
+  const end = performance.now();
+
+  const time = end - start;
 
   displaySolution(result.toString());
+
+  console.log(`Time: ${time}ms`);
 };
 
 cli();
