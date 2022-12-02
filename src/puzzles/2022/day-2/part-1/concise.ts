@@ -1,9 +1,6 @@
 // --- Day 2: Rock Paper Scissors: Part 1 ---
-import { resolve } from "path";
-import { INPUT_FILE_NAME } from "../../../shared/constants";
-import { displaySolution, read } from "../../../shared/utils";
 
-const solution = (input: string[]) => {
+export default (input: string[]) => {
     let points = 0;
 
     const pointMap = {
@@ -25,8 +22,5 @@ const solution = (input: string[]) => {
         points += point;
     })
     
-    displaySolution(points.toString());
+   return points;
 }
-
-const input = read(resolve(__dirname, INPUT_FILE_NAME));
-solution(input)
