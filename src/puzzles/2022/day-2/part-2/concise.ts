@@ -18,8 +18,7 @@ export default (input: string[]) => {
     }
 
     input.forEach((line) => {
-        const point = pointMap[line];
-        points += point;
+        points += pointMap[line];
     })
     
     return points

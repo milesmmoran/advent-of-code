@@ -5,11 +5,10 @@ export default (input: string[]) => {
     let currentLoad = 0;
     input.forEach((line) => {
         if (line === "") {
+            elves.push(currentLoad);
             currentLoad = 0;
         } else {
-            const food = parseInt(line);
-            currentLoad += food;
-            elves.push(currentLoad);
+            currentLoad += parseInt(line);
         }
     })
 
