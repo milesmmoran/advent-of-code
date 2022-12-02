@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "1": "ts-node src/puzzles/2022/day-1/solution.ts",
-    "2": "ts-node src/puzzles/2022/day-2/solution.ts"
+    "1-1": "ts-node src/puzzles/2022/day-1/part-1.ts",
+    "1-2": "ts-node src/puzzles/2022/day-1/part-2.ts",
+    "2-1": "ts-node src/puzzles/2022/day-2/part-1.ts",
+    "2-2": "ts-node src/puzzles/2022/day-2/part-2.ts"
 
   },
   "author": "Miles Moran",
