@@ -1,4 +1,4 @@
-// --- Day 3: Rucksack Reorganization: Part 1 ---
+// --- Day 3: Rucksack Reorganization ---
 
 export default (input: string[]) => {
   const uAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
