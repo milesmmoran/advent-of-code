@@ -1,10 +1,23 @@
 import { prompt } from "enquirer";
 import { displaySolution } from "../shared/utils";
-import { getDays, getParts, getAlgorithms, getAlgorithm, getInput } from "../dev/files";
+import { getDays, getParts, getAlgorithms, getAlgorithm, getInput, getYears } from "./files";
 import { performance } from "perf_hooks";
 
 const cli = async () => {
-  const year = "2022"; // can make dynamic later
+  const years = getYears();
+
+  const yearRes: {
+    year: string;
+  } = await prompt({
+    name: "year",
+    type: "select",
+    message: "Pick a year.",
+    choices: years.map((day) => ({
+      name: day,
+    })),
+  });
+
+  const { year } = yearRes;
 
   const days = getDays(year);
 

@@ -3,6 +3,14 @@ import fs from "fs";
 import { read } from "../shared/utils";
 
 // I DON'T KNOW PROPER WAY OF WORKING WITH PATHS, THIS WILL DO FOR NOW
+export const getYears = () => {
+    const split = __dirname.split('/')
+    split.pop();
+    const path = split.join('/') + '/puzzles/'
+    const years = fs.readdirSync(path);
+    return years;
+}
+
 export const getDays = (year: string) => {
     const split = __dirname.split('/')
     split.pop();
