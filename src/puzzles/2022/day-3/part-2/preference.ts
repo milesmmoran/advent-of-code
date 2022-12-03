@@ -8,11 +8,6 @@ export default (input: string[]) => {
   const groupSize = 3;
   input.forEach((line, i) => {
     const positionInGroup = i % groupSize;
-    if (positionInGroup === 0) {
-      load = [];
-      // Could continue here
-    }
-
     load.push(Array.from(line));
 
     if (positionInGroup === groupSize - 1) {
@@ -30,6 +25,7 @@ export default (input: string[]) => {
           break;
         }
       }
+      load = [];
     }
   });
 
