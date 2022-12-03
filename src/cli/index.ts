@@ -1,6 +1,6 @@
 import { prompt } from "enquirer";
 import { displaySolution } from "../shared/utils";
-import { getDays, getParts, getAlgorithms, getAlgorithm, getInput } from "./files";
+import { getDays, getParts, getAlgorithms, getAlgorithm, getInput } from "../dev/files";
 import { performance } from "perf_hooks";
 
 const cli = async () => {

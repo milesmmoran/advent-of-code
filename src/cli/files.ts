@@ -1,5 +1,5 @@
 
-import fs, { readFileSync } from "fs";
+import fs from "fs";
 import { read } from "../shared/utils";
 
 // I DON'T KNOW PROPER WAY OF WORKING WITH PATHS, THIS WILL DO FOR NOW

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cli": "ts-node src/cli/index.ts",
-    "dev": "ts-node src/puzzles/2022/day-1/part-1/concise.ts"
+    "dev": "ts-node src/dev/index.ts"
   },
   "author": "Miles Moran",
   "license": "ISC",
