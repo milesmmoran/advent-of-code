@@ -1,28 +1,19 @@
 // --- Day 2: Dive! ---
 
 export default (input: string[]) => {
-    let x = 0;
-    let y = 0;
+    let delta = '';
+    let epsilon = '';
+    input[0].split('').forEach((_, i) => {
+        let zero = 0;
+        let one = 0;
+        input.forEach(line => {
+            line[i] === '0' ? zero++ : one++;
+        })
+        delta += zero > one ? '0' : '1';
+        epsilon += zero < one ? '0' : '1';
 
-    const f = {
-        'forward': (d: number) => {
-            y += d;
-        },
-        'down': (d: number) => {
-            x += d;
-        },
-        'up': (d: number) => {
-            x += -d;
-        }
-    } as const;
-
-    input.forEach((line) => {
-        const split = line.split(' ');
-        const direction = split[0];
-        const distance = Number(split[1]);
-        f[direction](distance);
     })
-
-    return x * y;
+    // console.log(delta * epsilon)
+    return parseInt(delta, 2) * parseInt(epsilon, 2)
   };
   
