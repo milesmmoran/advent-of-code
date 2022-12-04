@@ -1,0 +1,1 @@
+Copy and paste the day-example folder into a year. 
