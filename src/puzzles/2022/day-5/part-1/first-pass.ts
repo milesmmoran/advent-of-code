@@ -1,8 +1,6 @@
-import { readFileSync } from "fs";
+// --- Day 1: Calorie Counting: Part 1 ---
 
-const filename = `${__dirname}/input.txt`;
-
-const dev = (input: string[]) => {
+export default (input: string[]) => {
     console.log(input)
     console.log('----')
     const numbers = '0123456789';
@@ -34,14 +32,10 @@ const dev = (input: string[]) => {
             const from = command[3];
             const to = command[5];
 
-            const removed = grid[from].splice(grid[from].length - quantity, quantity);
-
-            grid[to].push(...removed);
-
-            // cmz
-            console.log('removed', removed);
-
-
+            for (let i = 0; i < quantity; i++){
+                grid[to].push(grid[from].pop());
+            }
+            
             console.log(quantity, from, to)
             console.log(JSON.stringify(grid, null, 2))
 
@@ -52,10 +46,5 @@ const dev = (input: string[]) => {
         sol += grid[col][grid[col].length - 1];
     })
     return sol;
-};
+}
 
-const input = readFileSync(filename).toString("utf-8").split("\n");
-
-const solution = dev(input);
-
-console.log(solution);

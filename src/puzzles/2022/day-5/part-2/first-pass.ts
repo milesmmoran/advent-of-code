@@ -1,8 +1,6 @@
-import { readFileSync } from "fs";
+// --- Day 1: Calorie Counting: Part 2 ---
 
-const filename = `${__dirname}/input.txt`;
-
-const dev = (input: string[]) => {
+export default (input: string[]) => {
     console.log(input)
     console.log('----')
     const numbers = '0123456789';
@@ -52,10 +50,4 @@ const dev = (input: string[]) => {
         sol += grid[col][grid[col].length - 1];
     })
     return sol;
-};
-
-const input = readFileSync(filename).toString("utf-8").split("\n");
-
-const solution = dev(input);
-
-console.log(solution);
+}
