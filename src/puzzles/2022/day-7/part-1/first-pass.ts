@@ -63,7 +63,7 @@ export default (input: string[]) => {
   folders
     ).forEach((storage) => {
       if (storage >= 70000000 - folders['/']) {
-        total += storage;
+        console.log
       }
     })
     return total;

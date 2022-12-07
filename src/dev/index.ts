@@ -2,8 +2,6 @@ import { readFileSync } from "fs";
 
 const filename = `${__dirname}/input.txt`;
 const dev = (input: string[]) => {
- 
-
   return 'a';
 
 };
