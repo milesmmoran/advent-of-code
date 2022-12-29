@@ -3,20 +3,30 @@ import { readFileSync } from "fs";
 const filename = `${__dirname}/input.txt`;
 
 const dev = (input: string[]) => {
-  let cycle = 0;
-  let signalStrengthSum = 0;
+  let cycle = 1;
   let x = 1;
-
+  let art = '';
+  let line = '';
   const Cycle = ()=> {
-    cycle += 1;
-    const addSignalStrength = (20 + cycle) % 40 === 0 || cycle === 20;
+    const t = [x - 1, x , x + 1]
+    if (t.includes(cycle % 40)){
+      line += '#'
+    } else {
+      line += '.'
+    }
+
+
+    const addSignalStrength = cycle % 40 === 0;
 
     if (addSignalStrength) {
       console.log('ADD SIGNAL STRENGTH @ CYCLE', cycle)
-      console.log('x', x)
-      signalStrengthSum += x * cycle;
+      art += `${line}\n`;
+      line = '';
     }
+    cycle += 1;
+
   }
+
   for (let i = 0; i < input.length; i++) {
     const line = input[i];
 
@@ -27,12 +37,12 @@ const dev = (input: string[]) => {
     if (line.includes("addx")) {
       const split = line.split(" ");
       Cycle();
-      Cycle();
       x += Number(split[1]);
+      Cycle();
     }
 
   }
-  return signalStrengthSum;
+  return art;
 };
 
 const input = readFileSync(filename).toString("utf-8").split("\n");
